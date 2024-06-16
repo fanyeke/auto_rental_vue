@@ -269,7 +269,7 @@ export default {
             })
         },
         handleSearch() {
-            //console.log(this.infoModel.registrationDateVal)
+            // console.log(this.infoModel.registrationDateVal)
             if (this.infoModel.registrationDateVal != undefined) {
                 this.infoModel.lowRegistrationDate = this.infoModel.registrationDateVal[0]
                 this.infoModel.highRegistrationDate = this.infoModel.registrationDateVal[1]
@@ -289,7 +289,7 @@ export default {
                 this.$refs['form'].clearValidate();
             });
          },
-        handleDeleteBatch() { 
+        handleDeleteBatch() {
             if(this.multipleSelection.length==0){
                 this.$message({
                     message: '请选择要删除的数据',
@@ -314,7 +314,7 @@ export default {
                 });
             }
         },
-        handleUpdate(row) { 
+        handleUpdate(row) {
             this.saveInfo=row
             brandUtil.selectByMakerId(row.makerId).then(res=>{
                 this.saveBrandList=res.data
@@ -325,7 +325,7 @@ export default {
                 this.$refs['form'].clearValidate();
             });
         },
-        handleDelete(row) { 
+        handleDelete(row) {
             this.$confirm('此操作将永久删除该信息, 是否继续?', '提示', {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
@@ -342,7 +342,7 @@ export default {
                 });
             });
         },
-        handleSelectionChange(val) { 
+        handleSelectionChange(val) {
             this.multipleSelection = [];
             val.forEach(item => {
                 this.multipleSelection.push(item.id);
@@ -404,9 +404,9 @@ export default {
         selectMaker(val){
             brandUtil.selectByMakerId(val).then(res=>{
                 this.saveBrandList = res.data;
-                
+
             })
-            
+
         }
     },
 }
